@@ -1,0 +1,50 @@
+<svg width="680" height="680" viewBox="0 0 680 680" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg       { fill: #5d2e46; }
+    .strip    { fill: #4a2438; }
+    .hole     { fill: #5d2e46; }
+    .accent   { fill: #d4a5a5; }
+    .accent2  { fill: #b87d6d; }
+    .waveform { stroke: #d4a5a5; stroke-width: 5; fill: none; stroke-linecap: round; }
+    .waveform2{ stroke: #b87d6d; stroke-width: 5; fill: none; stroke-linecap: round; opacity: 0.7; }
+    .labeltext{ font-family: monospace; font-size: 38px; font-weight: 500; fill: #e8d5c4; letter-spacing: 1px; }
+    .sublabel { font-family: monospace; font-size: 20px; fill: #d4a5a5; font-weight: 400; letter-spacing: 3px; }
+  </style>
+
+  <rect width="680" height="680" rx="120" class="bg"/>
+
+  <rect x="0" y="80"  width="680" height="110" class="strip"/>
+  <rect x="0" y="490" width="680" height="110" class="strip"/>
+
+  <rect x="30"  y="93"  width="52" height="84" rx="6" class="hole"/>
+  <rect x="110" y="93"  width="52" height="84" rx="6" class="hole"/>
+  <rect x="190" y="93"  width="52" height="84" rx="6" class="hole"/>
+  <rect x="270" y="93"  width="52" height="84" rx="6" class="hole"/>
+  <rect x="350" y="93"  width="52" height="84" rx="6" class="hole"/>
+  <rect x="430" y="93"  width="52" height="84" rx="6" class="hole"/>
+  <rect x="510" y="93"  width="52" height="84" rx="6" class="hole"/>
+  <rect x="590" y="93"  width="52" height="84" rx="6" class="hole"/>
+
+  <rect x="30"  y="503" width="52" height="84" rx="6" class="hole"/>
+  <rect x="110" y="503" width="52" height="84" rx="6" class="hole"/>
+  <rect x="190" y="503" width="52" height="84" rx="6" class="hole"/>
+  <rect x="270" y="503" width="52" height="84" rx="6" class="hole"/>
+  <rect x="350" y="503" width="52" height="84" rx="6" class="hole"/>
+  <rect x="430" y="503" width="52" height="84" rx="6" class="hole"/>
+  <rect x="510" y="503" width="52" height="84" rx="6" class="hole"/>
+  <rect x="590" y="503" width="52" height="84" rx="6" class="hole"/>
+
+  <polygon points="120,253 120,427 293,340" class="accent"/>
+  <rect x="110" y="247" width="8" height="186" rx="4" class="accent2"/>
+
+  <line x1="340" y1="270" x2="610" y2="270" class="waveform"/>
+  <line x1="340" y1="293" x2="530" y2="293" class="waveform2"/>
+  <line x1="340" y1="316" x2="590" y2="316" class="waveform"/>
+  <line x1="340" y1="340" x2="510" y2="340" class="waveform2"/>
+  <line x1="340" y1="364" x2="600" y2="364" class="waveform"/>
+  <line x1="340" y1="387" x2="545" y2="387" class="waveform2"/>
+  <line x1="340" y1="410" x2="575" y2="410" class="waveform"/>
+
+  <text x="340" y="445" text-anchor="middle" class="labeltext">FFmpeg</text>
+  <text x="340" y="476" text-anchor="middle" class="sublabel">STUDIO</text>
+</svg>

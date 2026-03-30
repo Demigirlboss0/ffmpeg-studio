@@ -24,9 +24,17 @@ makepkg -si
 ./ffmpeg-studio
 ```
 
+## Features
+- **Convert** - Change format (MP4, AVI, MKV, MOV, WEBM) with re-encoding
+- **Remux** - Change container without re-encoding (fast, may not work for all combinations)
+- **Compress** - Reduce file size with quality control
+- **Resize** - Change resolution
+- **Trim** - Cut a portion of the video
+- **Extract Audio** - Pull audio track as MP3
+- **Create GIF** - Convert video to animated GIF
+- **Rotate** - Rotate video 90/180/270 degrees
+- **Add Watermark** - Add text watermark to video
+
 ## Requirements
 - FFmpeg installed on system
 - GTK3 (for Linux desktop)
-
-## Notes
-- AppImage bundling is not supported in this release
