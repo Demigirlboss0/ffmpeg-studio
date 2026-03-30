@@ -16,6 +16,7 @@ use uuid::Uuid;
 #[serde(rename_all = "snake_case")]
 enum Operation {
     Convert,
+    Remux,
     Compress,
     Resize,
     Trim,
@@ -124,7 +125,7 @@ impl Default for AppState {
 
 fn get_output_ext(operation: &Operation, params: &OperationParams) -> String {
     match operation {
-        Operation::Convert => {
+        Operation::Convert | Operation::Remux => {
             if let OperationParams::Convert(p) = params {
                 p.output_format.clone()
             } else {
@@ -182,6 +183,9 @@ fn build_ffmpeg_command(
             } else {
                 cmd.extend(["-c".to_string(), "copy".to_string(), output_path.to_string()]);
             }
+        }
+        Operation::Remux => {
+            cmd.extend(["-c".to_string(), "copy".to_string(), output_path.to_string()]);
         }
         Operation::Compress => {
             let crf = if let OperationParams::Compress(p) = params {
@@ -330,6 +334,7 @@ async fn process_video(
     
     let operation_name = match request.operation {
         Operation::Convert => "convert",
+        Operation::Remux => "remux",
         Operation::Compress => "compress",
         Operation::Resize => "resize",
         Operation::Trim => "trim",

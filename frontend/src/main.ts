@@ -12,7 +12,7 @@ window.onunhandledrejection = (event) => {
 
 console.log('[INFO] Frontend script loaded');
 
-type Operation = 'convert' | 'compress' | 'resize' | 'trim' | 'extract_audio' | 'gif' | 'rotate' | 'watermark';
+type Operation = 'convert' | 'remux' | 'compress' | 'resize' | 'trim' | 'extract_audio' | 'gif' | 'rotate' | 'watermark';
 
 interface ConvertParams {
   output_format: string;
@@ -68,6 +68,7 @@ interface ProcessResponse {
 
 const operationNames: Record<Operation, string> = {
   convert: 'Convert Format',
+  remux: 'Remux',
   compress: 'Compress Video',
   resize: 'Resize Video',
   trim: 'Trim Video',
@@ -178,6 +179,22 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         `;
         break;
+      case 'remux':
+        html = `
+          <div class="setting-group">
+            <label for="outputFormat">Output Format</label>
+            <select id="outputFormat">
+              <option value="mp4">MP4</option>
+              <option value="mkv">MKV</option>
+              <option value="mov">MOV</option>
+              <option value="avi">AVI</option>
+              <option value="webm">WEBM</option>
+              <option value="flv">FLV</option>
+            </select>
+          </div>
+          <p style="color: #666; font-size: 0.9rem;">Remux copies video/audio without re-encoding. Fast but may not work for all format combinations.</p>
+        `;
+        break;
       case 'compress':
         html = `
           <div class="setting-group">
@@ -273,6 +290,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     switch (selectedOperation) {
       case 'convert':
+        operationParams = { output_format: (document.getElementById('outputFormat') as HTMLSelectElement)?.value || 'mp4' };
+        break;
+      case 'remux':
         operationParams = { output_format: (document.getElementById('outputFormat') as HTMLSelectElement)?.value || 'mp4' };
         break;
       case 'compress':
