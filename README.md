@@ -16,14 +16,6 @@ A simple, elegant desktop interface for FFmpeg operations. Built with Tauri + Ty
 - **Rotate** - Rotate video 90/180/270 degrees
 - **Add Watermark** - Add text watermark to video
 
-## Theme
-
-Desert Rose:
-- Dusty Rose (#d4a5a5)
-- Clay (#b87d6d)
-- Sand (#e8d5c4)
-- Deep Burgundy (#5d2e46)
-
 ## Installation
 
 ### Debian/Ubuntu
@@ -52,21 +44,6 @@ makepkg -si
 
 - FFmpeg installed on system
 - GTK3 (for Linux desktop)
-
-## Development
-
-```bash
-cd frontend
-npm install
-npm run tauri dev
-```
-
-## Build
-
-```bash
-cd frontend
-npm run tauri build
-```
 
 ## License
 
