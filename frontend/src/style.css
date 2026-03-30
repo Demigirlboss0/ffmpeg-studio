@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #5d2e46;
+    color: #333;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #e8d5c4;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #d4a5a5;
+}
+
+.step {
+    background: #e8d5c4;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #5d2e46;
+    font-weight: bold;
+}
+
+.operations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.operation-btn {
+    background: #d4a5a5;
+    border: 2px solid #b87d6d;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    color: #5d2e46;
+    font-weight: 500;
+}
+
+.operation-btn:hover {
+    background: #b87d6d;
+    border-color: #5d2e46;
+    color: #e8d5c4;
+    transform: translateY(-2px);
+}
+
+.operation-btn:active {
+    transform: translateY(0);
+}
+
+.operation-btn.selected {
+    background: #5d2e46;
+    border-color: #3d1e2e;
+    color: #e8d5c4;
+}
+
+#selectedOperation {
+    margin-top: 15px;
+    padding: 10px;
+    background: #d4a5a5;
+    border-radius: 4px;
+    min-height: 20px;
+    color: #5d2e46;
+    font-weight: 500;
+}
+
+.upload-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#selectFileButton {
+    background: #b87d6d;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#selectFileButton:hover {
+    background: #a06a5a;
+}
+
+#selectFileButton:active {
+    transform: translateY(1px);
+}
+
+#selectFileButton:disabled {
+    background: #b87d6d;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#fileStatus {
+    margin-top: 10px;
+    min-height: 20px;
+    font-size: 0.9rem;
+}
+
+#settingsContainer {
+    margin-bottom: 20px;
+}
+
+.setting-group {
+    margin-bottom: 15px;
+}
+
+.setting-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #5d2e46;
+}
+
+.setting-group input,
+.setting-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b87d6d;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #f5ebe3;
+    color: #333;
+    transition: border-color 0.2s;
+}
+
+.setting-group input:focus,
+.setting-group select:focus {
+    outline: none;
+    border-color: #5d2e46;
+    box-shadow: 0 0 0 2px rgba(93, 46, 70, 0.2);
+}
+
+.setting-group input[type="range"] {
+    height: auto;
+    padding: 0;
+}
+
+.action-button {
+    background: #b87d6d;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+    font-weight: bold;
+}
+
+.action-button:hover {
+    background: #a06a5a;
+}
+
+.action-button:active {
+    transform: translateY(1px);
+}
+
+.action-button:disabled {
+    background: #b87d6d;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.back-button {
+    background: #d4a5a5;
+    color: #5d2e46;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.back-button:hover {
+    background: #b87d6d;
+    color: white;
+}
+
+.back-button:active {
+    transform: translateY(1px);
+}
+
+.progress-container {
+    background: #d4a5a5;
+    border-radius: 4px;
+    height: 20px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+#progressBar {
+    background: #b87d6d;
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#progressText {
+    text-align: center;
+    font-weight: 600;
+    color: #5d2e46;
+    margin-bottom: 10px;
+}
+
+#statusMessage {
+    text-align: center;
+    min-height: 40px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f5ebe3;
+    border: 1px solid #b87d6d;
+    font-size: 0.9rem;
+    color: #5d2e46;
+}
+
+.success {
+    color: #2d5d3d;
+    background-color: #d4e8d4;
+    border-color: #2d5d3d;
+}
+
+.error {
+    color: #8b2635;
+    background-color: #f5d4d6;
+    border-color: #8b2635;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .operations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+}

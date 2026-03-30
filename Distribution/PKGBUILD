@@ -1,0 +1,36 @@
+# Maintainer: Demigirlboss
+# PKGBUILD for FFmpeg Studio
+
+pkgname=ffmpeg-studio
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="A simple desktop interface for FFmpeg operations"
+arch=('x86_64')
+url="https://github.com/Demigirlboss/ffmpeg-studio"
+license=('MIT')
+depends=('ffmpeg' 'gtk3')
+optdepends=()
+provides=()
+conflicts=()
+
+source=("ffmpeg-studio")
+sha256sums=('SKIP')
+
+package() {
+  install -Dm755 "${srcdir}/ffmpeg-studio" "${pkgdir}/usr/bin/ffmpeg-studio"
+  
+  mkdir -p "${pkgdir}/usr/share/applications"
+  cat > "${pkgdir}/usr/share/applications/ffmpeg-studio.desktop" << EOF
+[Desktop Entry]
+Name=FFmpeg Studio
+Comment=A simple desktop interface for FFmpeg operations
+Exec=ffmpeg-studio
+Icon=ffmpeg-studio
+Terminal=false
+Type=Application
+Categories=AudioVideo;VideoEncoder;
+EOF
+
+  mkdir -p "${pkgdir}/usr/share/icons/hicolor/128x128/apps"
+  # Note: Icon files would need to be added separately
+}

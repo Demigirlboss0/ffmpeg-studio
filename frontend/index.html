@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFmpeg Studio</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FFmpeg Studio</h1>
+            <p>Simple interface for FFmpeg operations</p>
+        </header>
+        
+        <main>
+            <div id="step1" class="step">
+                <h2>1. Choose an Operation</h2>
+                <div class="operations-grid">
+                    <button class="operation-btn" data-operation="convert">Convert Format</button>
+                    <button class="operation-btn" data-operation="compress">Compress Video</button>
+                    <button class="operation-btn" data-operation="resize">Resize Video</button>
+                    <button class="operation-btn" data-operation="trim">Trim Video</button>
+                    <button class="operation-btn" data-operation="extract_audio">Extract Audio</button>
+                    <button class="operation-btn" data-operation="gif">Create GIF</button>
+                    <button class="operation-btn" data-operation="rotate">Rotate Video</button>
+                    <button class="operation-btn" data-operation="watermark">Add Watermark</button>
+                </div>
+                <p id="selectedOperation"></p>
+            </div>
+            
+            <div id="step2" class="step" style="display: none;">
+                <h2>2. Select Your File</h2>
+                <button id="selectFileButton" class="action-button">Select File</button>
+                <div id="fileStatus"></div>
+                <button id="backToStep1" class="back-button">← Back</button>
+            </div>
+            
+            <div id="step3" class="step" style="display: none;">
+                <h2>3. Configure Settings</h2>
+                <div id="settingsContainer"></div>
+                <button id="processButton" class="action-button">Process File</button>
+                <button id="backToStep2" class="back-button">← Back</button>
+            </div>
+            
+            <div id="step4" class="step" style="display: none;">
+                <h2>4. Processing...</h2>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <p id="progressText">0%</p>
+                <div id="statusMessage"></div>
+                <button id="startOverButton" class="back-button" style="display: none; margin: 20px auto 0;">Start Over</button>
+            </div>
+        </main>
+    </div>
+    
+    <script type="module" src="./src/main.ts"></script>
+</body>
+</html>
