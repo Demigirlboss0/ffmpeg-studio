@@ -47,4 +47,4 @@ makepkg -si
 
 ## License
 
-MIT
+[MIT](LICENSE)
